@@ -2,15 +2,16 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="xc-framework-utils" />
-        <module name="xc-service-manage-cms" />
+        <module name="xc-framework-common" />
+        <module name="xc-service-manage-cms31001" />
         <module name="xc-framework-model" />
         <module name="xc-service-api" />
-        <module name="xc-framework-common" />
       </profile>
     </annotationProcessing>
   </component>
@@ -20,7 +21,7 @@
       <module name="xc-framework-model" options="-parameters" />
       <module name="xc-framework-utils" options="-parameters" />
       <module name="xc-service-api" options="-parameters" />
-      <module name="xc-service-manage-cms" options="-parameters" />
+      <module name="xc-service-manage-cms31001" options="-parameters" />
       <module name="xcEduService" options="" />
     </option>
   </component>
