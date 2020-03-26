@@ -32,7 +32,6 @@
         <druid.version>1.1.6</druid.version>
         <mysql-connector-java.version>5.1.45</mysql-connector-java.version>
 
-
         <commons-io.version>2.6</commons-io.version>
         <org.apache.commons.io.version>1.3.2</org.apache.commons.io.version>
         <commons-fileupload.version>1.3.3</commons-fileupload.version>
@@ -53,12 +52,11 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies -->
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Finchley.RC1</version>
+                <version>Finchley.SR1</version>
                 <type>pom</type>
-                <scope>runtime</scope>
+                <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>mysql</groupId>
@@ -158,20 +156,9 @@
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
             </dependency>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-feign</artifactId>
-                <version>1.3.4.RELEASE</version>
-            </dependency>
+
         </dependencies>
     </dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-maven-plugin</artifactId>
-            <version>2.0.1.RELEASE</version>
-        </dependency>
-    </dependencies>
     <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>
@@ -196,11 +183,6 @@
 <!--            <plugin>-->
 <!--                <groupId>org.springframework.boot</groupId>-->
 <!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--&lt;!&ndash;                <version>2.1.5.RELEASE</version>&ndash;&gt;-->
-<!--                <configuration>-->
-<!--                    <fork>true</fork>-->
-<!--                    <addResources>true</addResources>-->
-<!--                </configuration>-->
 <!--            </plugin>-->
         </plugins>
     </build>
