@@ -11,12 +11,14 @@ import com.xuecheng.manage_cms.service.PageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
+
 
 @RestController
 @RequestMapping("/cms/page")
 public class CmsPageController implements CmsPageControllerApi {
 
-    @Autowired
+    @Resource
     PageService pageService;
 
     @Override
@@ -30,6 +32,18 @@ public class CmsPageController implements CmsPageControllerApi {
     @PostMapping("/add")
     public CmsPageResult add(@RequestBody CmsPage cmsPage) {
         return pageService.addAPage(cmsPage);
+    }
+
+    @Override
+    @GetMapping("/list/{id}")
+    public CmsPage findById(@PathVariable("id") String id) {
+        return pageService.getById(id);
+    }
+
+    @Override
+    @PutMapping("/edit/{id}")
+    public CmsPageResult editPage(@PathVariable("id") String id, @RequestBody CmsPage cmsPage) {
+        return pageService.editPage(id, cmsPage);
     }
 }
 

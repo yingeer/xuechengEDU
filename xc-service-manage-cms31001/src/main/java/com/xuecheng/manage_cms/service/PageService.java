@@ -13,9 +13,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+import java.util.Optional;
+
 @Service
 public class PageService {
-    @Autowired
+    @Resource
     CmsPageRepository cmsPageRepository;
 
     /**
@@ -68,6 +71,11 @@ public class PageService {
         return new QueryResponseResult(CommonCode.SUCCESS, queryResult);
     }
 
+    /**
+     *  添加页面功能
+     * @param cmsPage
+     * @return
+     */
     public CmsPageResult addAPage(CmsPage cmsPage) {
         // 调用dao层存储CmsPage
         CmsPage cmsPage1 = cmsPageRepository.findBySiteIdAndPageNameAndPageWebPath(cmsPage.getSiteId(), cmsPage.getPageName(), cmsPage.getPageWebPath());
@@ -75,6 +83,50 @@ public class PageService {
             cmsPage.setPageId(null);
             cmsPageRepository.save(cmsPage);
             return new CmsPageResult(CommonCode.SUCCESS, cmsPage);
+        }
+        return new CmsPageResult(CommonCode.FAIL, null);
+    }
+
+    /**
+     * 根据Id查询页面
+     * @param id
+     * @return
+     */
+    public CmsPage getById(String id) {
+        Optional<CmsPage> optional = cmsPageRepository.findById(id);
+        if (optional.isPresent()) {
+            return optional.get();
+        }
+        return null;
+    }
+
+    /**
+     * 修改页面
+     * @param id
+     * @param cmsPage
+     * @return
+     */
+    public CmsPageResult editPage(String id, CmsPage cmsPage) {
+        CmsPage toBeEditedPage = null;
+        try {
+            toBeEditedPage = this.getById(id);
+        } catch (Exception ex) {
+        }
+        if (cmsPage != null && toBeEditedPage != null) {
+
+            toBeEditedPage.setPageId(cmsPage.getPageId());
+            toBeEditedPage.setPageAliase(cmsPage.getPageAliase());
+            toBeEditedPage.setSiteId(cmsPage.getSiteId());
+            toBeEditedPage.setTemplateId(cmsPage.getTemplateId());
+            toBeEditedPage.setPageName(cmsPage.getPageName());
+            toBeEditedPage.setPageCreateTime(cmsPage.getPageCreateTime());
+            toBeEditedPage.setPageWebPath(cmsPage.getPageWebPath());
+            toBeEditedPage.setPageType(cmsPage.getPageType());
+            toBeEditedPage.setDataUrl(cmsPage.getDataUrl());
+            toBeEditedPage.setHtmlFileId(cmsPage.getHtmlFileId());
+
+            CmsPage save = cmsPageRepository.save(toBeEditedPage);
+            return new CmsPageResult(CommonCode.SUCCESS, save);
         }
         return new CmsPageResult(CommonCode.FAIL, null);
     }

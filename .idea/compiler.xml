@@ -7,12 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="demo8809" />
-        <module name="xc-service-manage-cms31001" />
-        <module name="xc-framework-utils" />
         <module name="xc-framework-common" />
         <module name="xc-framework-model" />
+        <module name="xc-service-manage-cms31001" />
+        <module name="xc-framework-utils" />
         <module name="xc-service-api" />
+        <module name="demo8809" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

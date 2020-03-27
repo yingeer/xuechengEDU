@@ -12,7 +12,7 @@ import io.swagger.annotations.ApiOperation;
 /**
  * 定义页面查询的接口 controller
  */
-@Api(value="cms页面管理接口",description = "cms页面管理接口，提供页面的增、删、改、查")
+@Api(value = "cms页面管理接口", description = "cms页面管理接口，提供页面的增、删、改、查")
 public interface CmsPageControllerApi {
     // 页面查询
     @ApiOperation("分页查询页面列表")
@@ -23,6 +23,13 @@ public interface CmsPageControllerApi {
     public QueryResponseResult findList(int page, int size, QueryPageRequest queryPageRequest);
 
     // 新增页面
-    @ApiOperation("添加页面")
+    @ApiOperation("添加页面功能")
     public CmsPageResult add(CmsPage cmsPage);
+
+    @ApiOperation("通过Id查询页面")
+    public CmsPage findById(String id);
+
+    @ApiOperation("修改页面")
+    public CmsPageResult editPage(String id, CmsPage cmsPage);
+
 }
