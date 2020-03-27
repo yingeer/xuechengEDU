@@ -8,6 +8,9 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import java.util.List;
 
 /**
  * 定义页面查询的接口 controller
@@ -31,5 +34,8 @@ public interface CmsPageControllerApi {
 
     @ApiOperation("修改页面")
     public CmsPageResult editPage(String id, CmsPage cmsPage);
+
+    @ApiOperation("通过pageName&pageType查询页面")
+    public List<CmsPage> queryByPageNameAndPageType(String pageName, String pageType);
 
 }

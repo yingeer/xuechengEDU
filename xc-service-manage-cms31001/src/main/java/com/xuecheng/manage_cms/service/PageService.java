@@ -14,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -147,6 +148,23 @@ public class PageService {
             return new ResponseResult(CommonCode.SUCCESS);
         }
         return new ResponseResult(CommonCode.FAIL);
+    }
+
+    /**
+     * 通过pageName&pageType查询页面
+     * @param pageName
+     * @param pageType
+     * @return
+     */
+    public List<CmsPage> queryByPageNameAndPageType(String pageName, String pageType) {
+        ExampleMatcher exampleMatcher = ExampleMatcher.matching();
+        exampleMatcher = exampleMatcher.withMatcher("pageName",
+                ExampleMatcher.GenericPropertyMatchers.contains());
+        CmsPage cmsPage = new CmsPage();
+        cmsPage.setPageType(pageType);
+        Example<CmsPage> example = Example.of(cmsPage, exampleMatcher);
+        List<CmsPage> cmsPageList = cmsPageRepository.findAll(example);
+        return cmsPageList;
     }
 }
 

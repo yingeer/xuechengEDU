@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 
 @RestController
@@ -51,6 +52,13 @@ public class CmsPageController implements CmsPageControllerApi {
     public ResponseResult deletePage(String id) {
         ResponseResult responseResult = pageService.deletePage(id);
         return responseResult;
+    }
+
+    @GetMapping("/{pageName}/{pageType}")
+    @ResponseBody
+    public List<CmsPage> queryByPageNameAndPageType(@PathVariable("pageName") String pageName,
+                                                    @PathVariable("pageType") String pageType) {
+        return pageService.queryByPageNameAndPageType(pageName, pageType);
     }
 
 }
