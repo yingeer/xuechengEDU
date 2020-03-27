@@ -52,5 +52,6 @@ public class CmsPageController implements CmsPageControllerApi {
         ResponseResult responseResult = pageService.deletePage(id);
         return responseResult;
     }
+
 }
 
