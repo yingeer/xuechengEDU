@@ -3,14 +3,12 @@ package com.xuecheng.manage_cms.service;
 import com.xuecheng.framework.domain.cms.CmsPage;
 import com.xuecheng.framework.domain.cms.request.QueryPageRequest;
 import com.xuecheng.framework.domain.cms.response.CmsPageResult;
-import com.xuecheng.framework.model.response.CommonCode;
-import com.xuecheng.framework.model.response.QueryResponseResult;
-import com.xuecheng.framework.model.response.QueryResult;
-import com.xuecheng.framework.model.response.ResultCode;
+import com.xuecheng.framework.model.response.*;
 import com.xuecheng.manage_cms.dao.CmsPageRepository;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -113,22 +111,36 @@ public class PageService {
         } catch (Exception ex) {
         }
         if (cmsPage != null && toBeEditedPage != null) {
-
-            toBeEditedPage.setPageId(cmsPage.getPageId());
-            toBeEditedPage.setPageAliase(cmsPage.getPageAliase());
-            toBeEditedPage.setSiteId(cmsPage.getSiteId());
-            toBeEditedPage.setTemplateId(cmsPage.getTemplateId());
-            toBeEditedPage.setPageName(cmsPage.getPageName());
-            toBeEditedPage.setPageCreateTime(cmsPage.getPageCreateTime());
-            toBeEditedPage.setPageWebPath(cmsPage.getPageWebPath());
-            toBeEditedPage.setPageType(cmsPage.getPageType());
-            toBeEditedPage.setDataUrl(cmsPage.getDataUrl());
-            toBeEditedPage.setHtmlFileId(cmsPage.getHtmlFileId());
+                toBeEditedPage.setPageId(cmsPage.getPageId());
+                toBeEditedPage.setPageAliase(cmsPage.getPageAliase());
+                toBeEditedPage.setSiteId(cmsPage.getSiteId());
+                toBeEditedPage.setTemplateId(cmsPage.getTemplateId());
+                toBeEditedPage.setPageName(cmsPage.getPageName());
+                toBeEditedPage.setPageCreateTime(cmsPage.getPageCreateTime());
+                toBeEditedPage.setPageWebPath(cmsPage.getPageWebPath());
+                toBeEditedPage.setPageType(cmsPage.getPageType());
+                toBeEditedPage.setDataUrl(cmsPage.getDataUrl());
+                toBeEditedPage.setHtmlFileId(cmsPage.getHtmlFileId());
 
             CmsPage save = cmsPageRepository.save(toBeEditedPage);
+//            cmsPageRepository.delete(toBeEditedPage);
             return new CmsPageResult(CommonCode.SUCCESS, save);
         }
         return new CmsPageResult(CommonCode.FAIL, null);
+    }
+
+    /**
+     * 删除page
+     * @param id
+     * @return
+     */
+    public ResponseResult deletePage(String id) {
+        CmsPage one = this.getById(id);
+        if (one != null) {
+            cmsPageRepository.deleteById(id);
+            return new ResponseResult(CommonCode.SUCCESS);
+        }
+        return new ResponseResult(CommonCode.FAIL);
     }
 }
 
