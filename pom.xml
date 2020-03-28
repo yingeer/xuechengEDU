@@ -9,6 +9,7 @@
         <module>xc-framework-model</module>
         <module>xc-service-api</module>
         <module>xc-service-manage-cms31001</module>
+        <module>test-freemarker</module>
     </modules>
 
     <parent>
