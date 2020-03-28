@@ -9,4 +9,3 @@ public class FreeMarkTest8088Application {
         SpringApplication.run(FreeMarkTest8088Application.class);
     }
 }
-`
