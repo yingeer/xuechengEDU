@@ -8,16 +8,16 @@ import freemarker.template.TemplateException;
 import io.swagger.models.auth.In;
 import jdk.internal.util.xml.impl.Input;
 import org.apache.commons.io.IOUtils;
+import org.bson.types.ObjectId;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.mongodb.gridfs.GridFsTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import javax.annotation.Resource;
+import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,6 +25,9 @@ import java.util.Map;
 @SpringBootTest
 @RunWith(SpringRunner.class)
 public class FreeMarkerTest {
+
+    @Resource
+    private GridFsTemplate gridFsTemplate;
 
     @Test
     public void testGenerateHtml() throws IOException, TemplateException {
@@ -75,5 +78,15 @@ public class FreeMarkerTest {
         InputStream inputStream = IOUtils.toInputStream(content);
         FileOutputStream fileOutputStream = new FileOutputStream(new File("d:/test1.html"));
         IOUtils.copy(inputStream, fileOutputStream);
+    }
+
+    @Test
+    public void testGridFs() throws FileNotFoundException {
+        File file = new File("d:/index_banner.html");
+        FileInputStream fileInputStream = new FileInputStream(file);
+
+        ObjectId objectId = gridFsTemplate.store(fileInputStream, "轮播图测试文件01", "");
+        String fileId = objectId.toString();
+        System.out.println(fileId);
     }
 }
