@@ -13,7 +13,7 @@ import javax.annotation.Resource;
 @RestController
 @RequestMapping("/cms/config")
 public class CmsConfigController implements CmsConfigControllerApi {
-
+// /cms/config/getmodel/5a791725dd573c3574ee333f
     @Resource
     private ConfigService configService;
 

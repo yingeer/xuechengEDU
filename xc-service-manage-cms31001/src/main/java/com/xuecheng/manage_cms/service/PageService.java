@@ -18,6 +18,7 @@ import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.bouncycastle.operator.SymmetricKeyWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -31,6 +32,7 @@ import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.security.cert.Certificate;
 import java.util.Collections;
 import java.util.List;
@@ -208,10 +210,7 @@ public class PageService {
         if (StringUtils.isEmpty(templateContent)) {
             ExceptionCast.cast(CmsCode.CMS_GENERATEHTML_TEMPLATEISNULL);
         }
-        String html = null;
-
-        html = this.generateHtml(templateContent, model);
-
+        String html = this.generateHtml(templateContent, model);
         if (StringUtils.isEmpty(html)) {
             ExceptionCast.cast(CmsCode.CMS_GENERATEHTML_HTMLISNULL);
         }
@@ -229,9 +228,7 @@ public class PageService {
             configuration.setTemplateLoader(stringTemplateLoader);
 
             // 获取模板
-            Template template = null;
-
-            template = configuration.getTemplate("template");
+            Template template = configuration.getTemplate("template");
             html = FreeMarkerTemplateUtils.processTemplateIntoString(template, model);
         } catch (Exception e) {
             return null;
@@ -248,6 +245,7 @@ public class PageService {
         if (dataURL == null) {
             ExceptionCast.cast(CmsCode.CMS_GENERATEHTML_DATAURLISNULL);
         }
+
         ResponseEntity<Map> responseEntity = restTemplate.getForEntity(dataURL, Map.class);
         Map body = responseEntity.getBody();
         return body;
@@ -266,11 +264,15 @@ public class PageService {
         if (optional.isPresent()) {
             CmsTemplate cmsTemplate = optional.get();
             String templateFieldId = cmsTemplate.getTemplateFileId();
-            GridFSFile gridFSFile = gridFsTemplate.findOne(Query.query(Criteria.where("_id").is(templateFieldId)));
-            GridFSDownloadStream gridFSDownloadStream = gridFSBucket.openDownloadStream(gridFSFile.getObjectId());
-            GridFsResource gridFsResource = new GridFsResource(gridFSFile, gridFSDownloadStream);
+            //      根据id查询文件
+            GridFSFile fsFile = gridFsTemplate.findOne(Query.query(Criteria.where("_id").is("5ad9a41d68db522910e00846")));
+//      打开下载流对象
+            GridFSDownloadStream gridFSDownloadStream = gridFSBucket.openDownloadStream(fsFile.getObjectId());
+//        创建gridFsResource，用于获取流对象
+            GridFsResource gridFsResource = new GridFsResource(fsFile, gridFSDownloadStream);
             try {
-                return IOUtils.toString(gridFsResource.getInputStream(), "UTF8");
+                String s = IOUtils.toString(gridFsResource.getInputStream(), "UTF8");
+                return s;
             } catch (IOException e) {
                 e.printStackTrace();
             }

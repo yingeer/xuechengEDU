@@ -20,6 +20,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.Field;
+import java.nio.charset.StandardCharsets;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
@@ -42,14 +43,14 @@ public class GridFsTemplateTest {
 
     @Test
     public void testGridBucket() throws IOException {
-        String fileId = "5e80a850c0e732577435fd3a";
+        String fileId = "5abf3d515b05aa0444d79840";
 //      根据id查询文件
         GridFSFile fsFile = gridFsTemplate.findOne(Query.query(Criteria.where("_id").is(fileId)));
 //      打开下载流对象
         GridFSDownloadStream gridFSDownloadStream = gridFSBucket.openDownloadStream(fsFile.getObjectId());
 //        创建gridFsResource，用于获取流对象
         GridFsResource gridFsResource = new GridFsResource(fsFile, gridFSDownloadStream);
-        String s = IOUtils.toString(gridFsResource.getInputStream(), "UTF-8");
+        String s = IOUtils.toString(gridFsResource.getInputStream(), StandardCharsets.UTF_8);
         System.out.println(s);
     }
 

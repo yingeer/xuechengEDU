@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.io.IOException;
+
 @ControllerAdvice
 public class ExceptionCatch {
 
@@ -35,8 +37,8 @@ public class ExceptionCatch {
     }
 
     @ResponseBody
-    @ExceptionHandler(Exception.class)
-    public ResponseResult exceptionOfOther(Exception e) {
+    @ExceptionHandler(IOException.class)
+    public ResponseResult exceptionOfOther(IOException e) {
         //记录日志
         LOGGER.error("catch exception:{}", e.getMessage());
 
