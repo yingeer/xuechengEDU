@@ -37,8 +37,8 @@ public class ExceptionCatch {
     }
 
     @ResponseBody
-    @ExceptionHandler(IOException.class)
-    public ResponseResult exceptionOfOther(IOException e) {
+    @ExceptionHandler(Exception.class)
+    public ResponseResult exceptionOfOther(Exception e) {
         //记录日志
         LOGGER.error("catch exception:{}", e.getMessage());
 

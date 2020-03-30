@@ -34,7 +34,7 @@ public class GridFsTemplateTest {
 
     @Test
     public void testGridFs() throws FileNotFoundException {
-        File file = new File("D:\\7.png");
+        File file = new File("D:\\xuecheng-edu\\xcEduService\\xc-service-manage-cms31001\\src\\main\\resources\\templates\\index_banner.ftl");
         FileInputStream fileInputStream = new FileInputStream(file);
         ObjectId objectId = gridFsTemplate.store(fileInputStream, "测试用例2", "");
         String fileId = objectId.toString();
@@ -43,7 +43,7 @@ public class GridFsTemplateTest {
 
     @Test
     public void testGridBucket() throws IOException {
-        String fileId = "5abf3d515b05aa0444d79840";
+        String fileId = "5e81b400c0e732496453b510";
 //      根据id查询文件
         GridFSFile fsFile = gridFsTemplate.findOne(Query.query(Criteria.where("_id").is(fileId)));
 //      打开下载流对象

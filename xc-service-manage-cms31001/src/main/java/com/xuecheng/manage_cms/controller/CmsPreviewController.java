@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;
@@ -24,7 +23,7 @@ public class CmsPreviewController extends BaseController {
     @GetMapping("/preview/{pageId}")
     public void preview(@PathVariable("pageId") String pageId) {
         String pageHtml = pageService.getPageHtml(pageId);
-        if (StringUtils.isEmpty(pageHtml)) {
+        if (StringUtils.isNotEmpty(pageHtml)) {
             try {
                 ServletOutputStream outputStream = response.getOutputStream();
                 outputStream.write(pageHtml.getBytes(StandardCharsets.UTF_8));

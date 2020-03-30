@@ -214,6 +214,10 @@ public class PageService {
         if (StringUtils.isEmpty(html)) {
             ExceptionCast.cast(CmsCode.CMS_GENERATEHTML_HTMLISNULL);
         }
+//        System.out.println("=================");
+//        System.out.println(html);
+//        System.out.println("=================");
+
         return html;
     }
 
@@ -230,8 +234,10 @@ public class PageService {
             // 获取模板
             Template template = configuration.getTemplate("template");
             html = FreeMarkerTemplateUtils.processTemplateIntoString(template, model);
+//            System.out.println(html);
+
         } catch (Exception e) {
-            return null;
+            e.printStackTrace();
         }
         return html;
     }
@@ -265,7 +271,7 @@ public class PageService {
             CmsTemplate cmsTemplate = optional.get();
             String templateFieldId = cmsTemplate.getTemplateFileId();
             //      根据id查询文件
-            GridFSFile fsFile = gridFsTemplate.findOne(Query.query(Criteria.where("_id").is("5ad9a41d68db522910e00846")));
+            GridFSFile fsFile = gridFsTemplate.findOne(Query.query(Criteria.where("_id").is(templateFieldId)));
 //      打开下载流对象
             GridFSDownloadStream gridFSDownloadStream = gridFSBucket.openDownloadStream(fsFile.getObjectId());
 //        创建gridFsResource，用于获取流对象
