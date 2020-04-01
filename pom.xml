@@ -10,6 +10,8 @@
         <module>xc-service-api</module>
         <module>xc-service-manage-cms31001</module>
         <module>test-freemarker</module>
+        <module>rabbitmq-client</module>
+        <module>rabbitmq-client-producer</module>
     </modules>
 
     <parent>
@@ -18,7 +20,7 @@
         <version>2.0.1.RELEASE</version>
     </parent>
 
-    <groupId>com.xuecheng</groupId>
+    <groupId>com.com.xuecheng</groupId>
     <artifactId>xcEduService</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>

@@ -34,7 +34,7 @@ public class GridFsTemplateTest {
 
     @Test
     public void testGridFs() throws FileNotFoundException {
-        File file = new File("D:\\xuecheng-edu\\xcEduService\\xc-service-manage-cms31001\\src\\main\\resources\\templates\\index_banner.ftl");
+        File file = new File("D:\\com.xuecheng-edu\\xcEduService\\xc-service-manage-cms31001\\src\\main\\resources\\templates\\index_banner.ftl");
         FileInputStream fileInputStream = new FileInputStream(file);
         ObjectId objectId = gridFsTemplate.store(fileInputStream, "测试用例2", "");
         String fileId = objectId.toString();

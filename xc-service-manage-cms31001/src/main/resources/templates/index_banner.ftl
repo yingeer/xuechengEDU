@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="http://www.xuecheng.com/plugins/normalize-css/normalize.css" />
-    <link rel="stylesheet" href="http://www.xuecheng.com/plugins/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="http://www.xuecheng.com/css/page-learing-index.css" />
-    <link rel="stylesheet" href="http://www.xuecheng.com/css/page-header.css" />
+    <link rel="stylesheet" href="http://www.com.xuecheng.com/plugins/normalize-css/normalize.css" />
+    <link rel="stylesheet" href="http://www.com.xuecheng.com/plugins/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="http://www.com.xuecheng.com/css/page-learing-index.css" />
+    <link rel="stylesheet" href="http://www.com.xuecheng.com/css/page-header.css" />
 </head>
 <body>
 <div class="banner-roll">
@@ -19,15 +19,15 @@
 
 <#--        <div class="item" style="background-image: url(../img/widget-bannerB.jpg);"></div>-->
 <#--&lt;#&ndash;        <div class="item" style="background-image: url(../img/widget-bannerA.jpg);"></div>&ndash;&gt;-->
-        <div class="item" style="background-image: url(http://www.xuecheng.com/img/widget-banner3.png);"></div>
-        <div class="item" style="background-image: url(http://www.xuecheng.com/img/widget-bannerB.jpg);"></div>
-        <div class="item" style="background-image: url(http://www.xuecheng.com/img/widget-bannerA.jpg);"></div>
-        <div class="item" style="background-image: url(http://www.xuecheng.com/img/widget-banner3.png);"></div>
+        <div class="item" style="background-image: url(http://www.com.xuecheng.com/img/widget-banner3.png);"></div>
+        <div class="item" style="background-image: url(http://www.com.xuecheng.com/img/widget-bannerB.jpg);"></div>
+        <div class="item" style="background-image: url(http://www.com.xuecheng.com/img/widget-bannerA.jpg);"></div>
+        <div class="item" style="background-image: url(http://www.com.xuecheng.com/img/widget-banner3.png);"></div>
     </div>
     <div class="indicators"></div>
 </div>
-<script type="text/javascript" src="http://www.xuecheng.com/plugins/jquery/dist/jquery.js"></script>
-<script type="text/javascript" src="http://www.xuecheng.com/plugins/bootstrap/dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="http://www.com.xuecheng.com/plugins/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="http://www.com.xuecheng.com/plugins/bootstrap/dist/js/bootstrap.js"></script>
 <script type="text/javascript">
     var tg = $('.banner-item .item');
     var num = 0;
