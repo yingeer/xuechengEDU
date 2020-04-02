@@ -38,5 +38,4 @@ public class ConsumerPostPage {
         pageService.savePageToServerPath(pageId);
     }
 
-
 }

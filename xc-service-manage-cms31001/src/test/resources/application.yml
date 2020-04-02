@@ -1,0 +1,19 @@
+server:
+  port: 31001
+spring:
+  application:
+    name: xc-service-manage-cms
+  data:
+    mongodb:
+      uri:  mongodb://localhost:27017
+      database: xc_cms
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    virtualHost: /
+  freemarker:
+    cache: false  # 关闭缓存
+    settings:
+      template_update_delay: 0  # 立即更新检查 （>0会有缓存）

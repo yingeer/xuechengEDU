@@ -1,6 +1,7 @@
 package com.xuecheng.manage_cms_client.config;
 
 import org.springframework.amqp.core.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -25,7 +26,7 @@ public class RabbitMqConfig {
      *
      * @return
      */
-    @Bean(EX_ROUTING_CMS_POSTPAGE)
+    @Bean(name = EX_ROUTING_CMS_POSTPAGE)
     public Exchange EXCHANGE_TOPICS_INFORM() {
         return ExchangeBuilder.directExchange(EX_ROUTING_CMS_POSTPAGE).durable(true).build();
     }
@@ -34,7 +35,7 @@ public class RabbitMqConfig {
      * 配置队列
      * @return
      */
-    @Bean(QUEUE_CMS_POSTPAGE)
+    @Bean(name = QUEUE_CMS_POSTPAGE)
     public Queue QUEUE_CMS_POSTPAGE() {
         return new Queue(queueName);
     }
@@ -49,6 +50,7 @@ public class RabbitMqConfig {
     public Binding BINDING_QUEUE_INFORM_SMS(@Qualifier(QUEUE_CMS_POSTPAGE) Queue queue,
                                             @Qualifier(EX_ROUTING_CMS_POSTPAGE) Exchange exchange) {
         return BindingBuilder.bind(queue).to(exchange).with(routingKey).noargs();
+
     }
 
 }
