@@ -10,6 +10,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/demo8809/pom.xml" />
+        <option value="$PROJECT_DIR$/rabbitmq-client-producer/pom.xml" />
       </set>
     </option>
   </component>

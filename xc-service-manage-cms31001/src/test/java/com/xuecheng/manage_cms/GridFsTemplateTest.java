@@ -34,16 +34,16 @@ public class GridFsTemplateTest {
 
     @Test
     public void testGridFs() throws FileNotFoundException {
-        File file = new File("D:\\com.xuecheng-edu\\xcEduService\\xc-service-manage-cms31001\\src\\main\\resources\\templates\\index_banner.ftl");
+        File file = new File("D:\\index_banner.html");
         FileInputStream fileInputStream = new FileInputStream(file);
-        ObjectId objectId = gridFsTemplate.store(fileInputStream, "测试用例2", "");
+        ObjectId objectId = gridFsTemplate.store(fileInputStream, "my_index_banner", "");
         String fileId = objectId.toString();
         System.out.println(fileId);
     }
 
     @Test
     public void testGridBucket() throws IOException {
-        String fileId = "5e81b400c0e732496453b510";
+        String fileId = "5e858277c0e732084022cfcf";
 //      根据id查询文件
         GridFSFile fsFile = gridFsTemplate.findOne(Query.query(Criteria.where("_id").is(fileId)));
 //      打开下载流对象
@@ -56,7 +56,7 @@ public class GridFsTemplateTest {
 
     @Test
     public void testDeleteFile() {
-        gridFsTemplate.delete(Query.query(Criteria.where("_id").is("5e80a850c0e732577435fd3a")));
+        gridFsTemplate.delete(Query.query(Criteria.where("_id").is("5e858277c0e732084022cfcf")));
     }
 }
 

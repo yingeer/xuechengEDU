@@ -13,7 +13,7 @@ import java.util.Map;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class ConfigTest {
+public class RestTemplateTest {
 
     @Resource
     private RestTemplate restTemplate;

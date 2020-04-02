@@ -11,9 +11,9 @@ import org.springframework.http.client.OkHttp3ClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-@EntityScan("com.com.xuecheng.framework.domain.cms")
+@EntityScan("com.xuecheng.framework.domain.cms")
 @ComponentScan(basePackages = {"com.xuecheng.api"}) // 扫描bean
-@ComponentScan(basePackages={"com.xuecheng.manage_cms"})//扫描本项目下的所有类
+@ComponentScan(basePackages={"com.xuecheng.manage_cms"})
 @ComponentScan(basePackages = {"com.xuecheng.framework"})
 public class ManageCmsApplication {
     public static void main(String[] args) {
