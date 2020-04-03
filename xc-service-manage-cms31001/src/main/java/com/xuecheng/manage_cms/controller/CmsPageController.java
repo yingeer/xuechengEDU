@@ -9,6 +9,7 @@ import com.xuecheng.framework.model.response.QueryResponseResult;
 import com.xuecheng.framework.model.response.QueryResult;
 import com.xuecheng.framework.model.response.ResponseResult;
 import com.xuecheng.manage_cms.service.PageService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
@@ -56,6 +57,13 @@ public class CmsPageController implements CmsPageControllerApi {
         ResponseResult responseResult = pageService.deletePage(id);
         return responseResult;
     }
+
+    @Override
+    @GetMapping("/post/{pageId}")
+    public ResponseResult post(@PathVariable("pageId") String pageId) {
+        return pageService.postPage(pageId);
+    }
+
 
     @GetMapping("/{pageName}/{pageType}")
     @ResponseBody

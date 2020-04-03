@@ -41,4 +41,7 @@ public interface CmsPageControllerApi {
 
     @ApiOperation("删除页面")
     public ResponseResult deletePage(String id);
+
+    @ApiOperation("发布页面")
+    public ResponseResult post(String pageId);
 }
