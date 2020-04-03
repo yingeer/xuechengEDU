@@ -11,6 +11,7 @@
         <module>xc-service-manage-cms31001</module>
         <module>test-freemarker</module>
         <module>cms-client31000</module>
+        <module>xc-service-manage-course</module>
 
     </modules>
 

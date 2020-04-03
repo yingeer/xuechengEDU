@@ -13,6 +13,7 @@
         <module name="xc-service-manage-cms31001" />
         <module name="rabbitmq-client-producer" />
         <module name="xc-framework-utils" />
+        <module name="xc-service-manage-course31200" />
         <module name="test-freemarker" />
         <module name="xc-service-api" />
         <module name="demo8809" />
@@ -35,6 +36,7 @@
       <module name="xc-framework-utils" options="-parameters" />
       <module name="xc-service-api" options="-parameters" />
       <module name="xc-service-manage-cms31001" options="-parameters" />
+      <module name="xc-service-manage-course31200" options="-parameters" />
       <module name="xcEduService" options="" />
     </option>
   </component>
