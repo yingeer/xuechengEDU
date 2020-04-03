@@ -59,7 +59,7 @@ public class CmsPageController implements CmsPageControllerApi {
     }
 
     @Override
-    @GetMapping("/post/{pageId}")
+    @GetMapping("/postpage/{pageId}")
     public ResponseResult post(@PathVariable("pageId") String pageId) {
         return pageService.postPage(pageId);
     }
@@ -71,6 +71,5 @@ public class CmsPageController implements CmsPageControllerApi {
                                                     @PathVariable("pageType") String pageType) {
         return pageService.queryByPageNameAndPageType(pageName, pageType);
     }
-
 }
 
