@@ -3,3 +3,8 @@ server:
 spring:
   application:
     name: xc-service-manage-course
+
+mybatis:
+  #pojo别名扫描包
+  type-aliases-package: com.xuecheng.framework.domain
+  mapper-locations: classpath:com/xuecheng/manage_course/dao/*Mapper.xml

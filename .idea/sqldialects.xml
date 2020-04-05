@@ -2,5 +2,6 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/xc-service-manage-course31200/src/main/resources/com/xuecheng/manage_course/dao/CourseMapper.xml" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/xc-service-manage-course31200/src/main/resources/com/xuecheng/manage_course/dao/TeachplanMapper.xml" dialect="MySQL" />
   </component>
 </project>
