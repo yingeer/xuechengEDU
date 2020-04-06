@@ -11,6 +11,7 @@ import com.xuecheng.manage_course.dao.CourseBaseRepository;
 import com.xuecheng.manage_course.dao.TeachplanMapper;
 import com.xuecheng.manage_course.dao.TeachplanRepository;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -55,6 +56,9 @@ public class CourseService {
         if (StringUtils.isEmpty(parentId)) {
             parentId = getTeachplanRoot(courseId);
         }
+        if (parentId == null) {
+            ExceptionCast.cast(CommonCode.INVALID_PARAM);
+        }
         // 取出parent teachplan
         Optional<Teachplan> optional = teachplanRepository.findById(parentId);
         if (!optional.isPresent()) {
@@ -63,16 +67,19 @@ public class CourseService {
         Teachplan parentTeachplan = optional.get();
         // 取出parent teachplan 信息
         String parentGrade = parentTeachplan.getGrade();
-        // 设置当前传入teachplan属性
-        teachplan.setParentid(parentId);
-        teachplan.setStatus("0"); // status=0 未发布
-        teachplan.setCourseid(courseId);
+        // 传入数据teachplan复制一份到teachplanNew
+        Teachplan teachplanNew = new Teachplan();
+        BeanUtils.copyProperties(teachplan, teachplanNew);
+
+        teachplanNew.setParentid(parentId);
+        teachplanNew.setStatus("0"); // status=0 未发布
+        teachplanNew.setCourseid(courseId);
         if (parentGrade.equals("1")) {
-            teachplan.setGrade("2");
+            teachplanNew.setGrade("2");
         } else if (parentGrade.equals("2")) {
-            teachplan.setGrade("3");
+            teachplanNew.setGrade("3");
         }
-        teachplanRepository.save(teachplan);
+        teachplanRepository.save(teachplanNew);
         return new ResponseResult(CommonCode.SUCCESS);
     }
 
