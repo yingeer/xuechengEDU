@@ -8,3 +8,9 @@ mybatis:
   #pojo别名扫描包
   type-aliases-package: com.xuecheng.framework.domain
   mapper-locations: classpath:com/xuecheng/manage_course/dao/*Mapper.xml
+
+pagehelper:
+    helper-dialect: mysql  #数据库
+    reasonable: true
+    support-methods-arguments: true
+    params: count=countSql

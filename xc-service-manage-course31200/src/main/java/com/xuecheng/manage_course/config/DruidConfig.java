@@ -11,7 +11,7 @@ public class DruidConfig {
         //Druid 数据源配置
         DruidDataSource dataSource = new DruidDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://127.0.0.1:3306/xc_course?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true");
+        dataSource.setUrl("jdbc:mysql://127.0.0.1:3306/xc_course?characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true");
         dataSource.setUsername("ying");
         dataSource.setPassword("newman123");
         //初始连接数(默认值0)
