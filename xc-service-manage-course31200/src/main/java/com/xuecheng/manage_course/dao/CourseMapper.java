@@ -6,7 +6,6 @@ import com.xuecheng.framework.domain.course.ext.CourseInfo;
 import com.xuecheng.framework.domain.course.request.CourseListRequest;
 import org.apache.ibatis.annotations.Mapper;
 
-import java.util.List;
 
 /**
  * Created by Administrator.

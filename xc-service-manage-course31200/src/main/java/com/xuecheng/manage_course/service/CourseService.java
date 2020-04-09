@@ -1,13 +1,19 @@
 package com.xuecheng.manage_course.service;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.xuecheng.framework.domain.cms.response.CmsCode;
 import com.xuecheng.framework.domain.course.CourseBase;
 import com.xuecheng.framework.domain.course.Teachplan;
+import com.xuecheng.framework.domain.course.ext.CourseInfo;
 import com.xuecheng.framework.domain.course.ext.TeachplanNode;
+import com.xuecheng.framework.domain.course.request.CourseListRequest;
 import com.xuecheng.framework.exception.ExceptionCast;
 import com.xuecheng.framework.model.response.CommonCode;
+import com.xuecheng.framework.model.response.QueryResult;
 import com.xuecheng.framework.model.response.ResponseResult;
 import com.xuecheng.manage_course.dao.CourseBaseRepository;
+import com.xuecheng.manage_course.dao.CourseMapper;
 import com.xuecheng.manage_course.dao.TeachplanMapper;
 import com.xuecheng.manage_course.dao.TeachplanRepository;
 import org.apache.commons.lang3.StringUtils;
@@ -31,6 +37,9 @@ public class CourseService {
 
     @Resource
     private CourseBaseRepository courseBaseRepository;
+
+    @Resource
+    private CourseMapper courseMapper;
 
     public TeachplanNode findTeachplanList(String courseId) {
         TeachplanNode teachplanNode = teachplanMapper.selectList(courseId);
@@ -109,6 +118,23 @@ public class CourseService {
         }
         Teachplan teachplanRoot = teachplanList.get(0);
         return teachplanRoot.getId();
+    }
+
+    /**
+     * 实现分页查询course
+     * @param page
+     * @param size
+     * @param courseListRequest
+     * @return
+     */
+    public QueryResult<CourseInfo> findCourseList(int page, int size, CourseListRequest courseListRequest) {
+        PageHelper.startPage(page, size);
+        Page<CourseInfo> courseInfoPage = courseMapper.findCourseListPage(courseListRequest);
+        List<CourseInfo> result = courseInfoPage.getResult();
+        QueryResult<CourseInfo> queryResult = new QueryResult<CourseInfo>();
+        queryResult.setList(result);
+        queryResult.setTotal(result.size());
+        return queryResult;
     }
 
 }
