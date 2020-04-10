@@ -33,6 +33,10 @@
                            on two.id=three.parentid
         where one.parentid=0
         order by one.id, two.id, three.id;
+    </select>
 
+    <select id="getCategoryByPage" resultType="com.xuecheng.framework.domain.course.Category">
+        select *
+        from category
     </select>
 </mapper>
