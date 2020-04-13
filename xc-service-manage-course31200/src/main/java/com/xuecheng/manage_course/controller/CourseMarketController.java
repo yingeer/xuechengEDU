@@ -35,7 +35,8 @@ public class CourseMarketController implements CourseMarketControllerApi {
     @Override
     @PutMapping("/update/{courseMarketId}")
     public ResponseResult updateCourseMarket(@PathVariable("courseMarketId") String courseMarketId, @RequestBody CourseMarket postCourseMarket) {
-        return courseMarketService.updateCourseMarket(courseMarketId, postCourseMarket);
+//        return courseMarketService.updateCourseMarket(courseMarketId, postCourseMarket);
+        return courseMarketService.quickUpdate(courseMarketId, postCourseMarket);
     }
 
 }

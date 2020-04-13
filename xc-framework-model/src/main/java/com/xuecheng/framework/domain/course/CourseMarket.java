@@ -20,9 +20,10 @@ import java.util.Date;
 @GenericGenerator(name = "jpa-assigned", strategy = "assigned")
 public class CourseMarket implements Serializable {
     private static final long serialVersionUID = -916357110051689486L;
-    @Id
-    @GeneratedValue(generator = "jpa-assigned")
+
     @Column(length = 32)
+    @Id
+    @GeneratedValue(generator = "jpa-assigned", strategy = GenerationType.AUTO)
     private String id;
     private String charge;
     private String valid;
