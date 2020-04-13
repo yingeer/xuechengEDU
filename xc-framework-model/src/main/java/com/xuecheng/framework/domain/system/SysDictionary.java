@@ -3,6 +3,7 @@ package com.xuecheng.framework.domain.system;
 import com.xuecheng.framework.domain.cms.CmsConfigModel;
 import lombok.Data;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -14,6 +15,7 @@ import java.util.List;
  */
 @Data
 @ToString
+@Accessors(chain = true)
 @Document(collection = "sys_dictionary")
 public class SysDictionary {
 

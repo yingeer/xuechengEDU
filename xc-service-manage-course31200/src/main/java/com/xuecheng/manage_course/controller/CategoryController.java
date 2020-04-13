@@ -22,7 +22,7 @@ public class CategoryController implements CategoryControllerApi {
      * @return
      */
     @Override
-    @GetMapping("/list/all")
+    @GetMapping("/list")
     public CategoryNode findList() {
         return categoryService.findList();
     }
@@ -32,7 +32,8 @@ public class CategoryController implements CategoryControllerApi {
      * @return
      */
     @GetMapping("/list/{page}/{size}")
-    public QueryResult<Category> getCategoryByPage(@PathVariable(value = "page") int page, @PathVariable("size") int size) {
+    public QueryResult<Category> getCategoryByPage(@PathVariable(value = "page") int page,
+                                                   @PathVariable("size") int size) {
         return categoryService.getCategoryByPage(page, size);
     }
 }

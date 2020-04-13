@@ -2,6 +2,7 @@ package com.xuecheng.framework.domain.course;
 
 import lombok.Data;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -12,6 +13,7 @@ import java.io.Serializable;
  */
 @Data
 @ToString
+@Accessors(chain = true)
 @Entity
 @Table(name="teachplan")
 @GenericGenerator(name = "jpa-uuid", strategy = "uuid")

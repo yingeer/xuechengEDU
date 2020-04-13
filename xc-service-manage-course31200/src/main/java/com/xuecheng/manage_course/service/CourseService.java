@@ -21,8 +21,10 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import javax.annotation.Resource;
+import javax.crypto.spec.OAEPParameterSpec;
 import java.util.List;
 import java.util.Optional;
 
@@ -135,6 +137,49 @@ public class CourseService {
         queryResult.setList(result);
         queryResult.setTotal(result.size());
         return queryResult;
+    }
+
+    /**
+     * 根据courseId 获取CourseBase对象
+     * @param courseId
+     * @return
+     */
+    public CourseBase getCourseBaseById(String courseId) {
+        Optional<CourseBase> optionalCourseBase = courseBaseRepository.findById(courseId);
+        return optionalCourseBase.get();
+    }
+
+    /**
+     * 更改id对应的courseBase对象
+     * @param courseId
+     * @param userCourseBase
+     * @return
+     */
+    public ResponseResult updateCourseBase(String courseId, CourseBase userCourseBase) {
+        // 获取原来的courseBase
+        CourseBase courseBase = null;
+        Optional<CourseBase> optionalCourseBase = courseBaseRepository.findById(courseId);
+        if (!optionalCourseBase.isPresent()) {
+            return new ResponseResult(CommonCode.FAIL);
+        }
+        courseBase = optionalCourseBase.get();
+
+        // 用userCourseBase里面的数据更新原来的courseBase
+        String name = userCourseBase.getName();
+        String users = userCourseBase.getUsers();
+        String mt = userCourseBase.getMt();
+        String grade = userCourseBase.getGrade();
+        String studyModel = userCourseBase.getStudymodel();
+        String teachMode = userCourseBase.getTeachmode();
+        String description = userCourseBase.getDescription();
+        courseBase.setName(name).setUsers(users).setMt(mt).setGrade(grade)
+                .setStudymodel(studyModel).setTeachmode(teachMode).setDescription(description);
+
+        // 保存courseBase
+        CourseBase courseBase1 = courseBaseRepository.save(courseBase);
+
+        // 返回成功ResponseResult
+        return new ResponseResult(CommonCode.SUCCESS);
     }
 
 }

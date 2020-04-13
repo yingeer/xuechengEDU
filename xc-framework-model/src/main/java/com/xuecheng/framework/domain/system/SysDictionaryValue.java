@@ -2,6 +2,7 @@ package com.xuecheng.framework.domain.system;
 
 import lombok.Data;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -11,6 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
  */
 @Data
 @ToString
+@Accessors(chain = true)
 public class SysDictionaryValue {
 
     @Field("sd_id")
