@@ -2,6 +2,7 @@ package com.xuecheng.framework.domain.course;
 
 import lombok.Data;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -15,6 +16,7 @@ import java.util.Date;
 @ToString
 @Entity
 @Table(name="course_market")
+@Accessors(chain = true)
 @GenericGenerator(name = "jpa-assigned", strategy = "assigned")
 public class CourseMarket implements Serializable {
     private static final long serialVersionUID = -916357110051689486L;
