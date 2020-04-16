@@ -13,6 +13,7 @@
         <module>cms-client31000</module>
         <module>xc-service-manage-course31200</module>
         <module>test-fdfs</module>
+        <module>xc-service-base-filesystem22100</module>
 
     </modules>
 
