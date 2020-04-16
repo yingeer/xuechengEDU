@@ -37,7 +37,7 @@ public class CourseMarketService {
     }
 
     /**
-     * 更新courseMarket
+     * 更新courseMarket，下面的quickUpdate简单搞定
      * @param courseMarketId
      * @param postCourseMarket
      * @return
