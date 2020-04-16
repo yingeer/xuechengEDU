@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/xc-service-base-filesystem/xc-service-base-filesystem.iml" filepath="$PROJECT_DIR$/xc-service-base-filesystem/xc-service-base-filesystem.iml" />
+    </modules>
+  </component>
+</project>

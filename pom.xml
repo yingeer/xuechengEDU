@@ -12,7 +12,6 @@
         <module>test-freemarker</module>
         <module>cms-client31000</module>
         <module>xc-service-manage-course31200</module>
-        <module>test-fastdfs</module>
         <module>test-fdfs</module>
 
     </modules>
