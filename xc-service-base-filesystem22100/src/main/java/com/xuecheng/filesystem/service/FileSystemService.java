@@ -69,6 +69,8 @@ public class FileSystemService {
         }
         // 上传到fdfs
         String fileId = uploadToFdfs(multipartFile);
+        if (fileId == null)
+            System.out.println("fileId:\t" + fileId);
         // 创建FileSystem对象
         FileSystem fileSystem = new FileSystem();
         fileSystem.setFileId(fileId);
@@ -83,6 +85,7 @@ public class FileSystemService {
             fileSystem.setMetadata(map);
         }
         fileSystemRepository.save(fileSystem);
+
         return new UploadFileResult(CommonCode.SUCCESS, fileSystem);
     }
 
@@ -120,7 +123,7 @@ public class FileSystemService {
             String fileId = sc1.upload_file1(bytes, extName, null);
             return fileId;
         } catch (IOException | MyException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
             return null;
         }
     }
