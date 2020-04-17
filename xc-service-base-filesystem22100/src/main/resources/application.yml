@@ -6,7 +6,7 @@ spring:
 #mongo配置
   data:
     mongodb:
-      database: xc_fs
+      database: xuecheng
       uri: mongodb://127.0.0.1:27017
 #SpringMVC上传文件配置
   servlet:

@@ -7,5 +7,11 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/xc_course</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="xc_mongo" uuid="bf30553b-c3f1-47c9-a551-0d998248765e">
+      <driver-ref>mongo</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.dbschema.MongoJdbcDriver</jdbc-driver>
+      <jdbc-url>mongodb://localhost:27017/xc_cms</jdbc-url>
+    </data-source>
   </component>
 </project>
