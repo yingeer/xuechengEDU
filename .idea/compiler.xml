@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="xc-service-manage-cms31002" />
         <module name="xc-service-manage-cms31001" />
         <module name="xc-framework-model" />
         <module name="xc-framework-utils" />
@@ -48,6 +49,7 @@
       <module name="xc-service-api" options="-parameters" />
       <module name="xc-service-base-filesystem22100" options="-parameters" />
       <module name="xc-service-manage-cms31001" options="-parameters" />
+      <module name="xc-service-manage-cms31002" options="-parameters" />
       <module name="xc-service-manage-course31200" options="-parameters" />
       <module name="xcEduService" options="" />
     </option>

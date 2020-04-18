@@ -16,6 +16,7 @@
         <module>xc-service-base-filesystem22100</module>
         <module>xc-govern-center50101</module>
         <module>xc-govern-center50102</module>
+        <module>xc-service-manage-cms31002</module>
 
     </modules>
 
