@@ -13,6 +13,7 @@
         <module name="rabbitmq-client-producer" />
         <module name="xc-framework-common" />
         <module name="xc-framework-model" />
+        <module name="xc-govern-center50101" />
         <module name="xc-service-manage-course31200" />
         <module name="test-freemarker" />
         <module name="test-fdfs" />
@@ -41,6 +42,7 @@
       <module name="xc-framework-common" options="-parameters" />
       <module name="xc-framework-model" options="-parameters" />
       <module name="xc-framework-utils" options="-parameters" />
+      <module name="xc-govern-center50101" options="-parameters" />
       <module name="xc-service-api" options="-parameters" />
       <module name="xc-service-base-filesystem22100" options="-parameters" />
       <module name="xc-service-manage-cms31001" options="-parameters" />
