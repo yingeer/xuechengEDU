@@ -14,7 +14,8 @@
         <module>xc-service-manage-course31200</module>
         <module>test-fdfs</module>
         <module>xc-service-base-filesystem22100</module>
-        <module>xc-govern-center</module>
+        <module>xc-govern-center50101</module>
+        <module>xc-govern-center50102</module>
 
     </modules>
 

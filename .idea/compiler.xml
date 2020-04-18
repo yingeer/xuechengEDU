@@ -7,19 +7,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="xc-service-base-filesystem22100" />
-        <module name="cms-client31000" />
         <module name="xc-service-manage-cms31001" />
-        <module name="rabbitmq-client-producer" />
-        <module name="xc-framework-common" />
         <module name="xc-framework-model" />
-        <module name="xc-govern-center50101" />
-        <module name="xc-service-manage-course31200" />
-        <module name="test-freemarker" />
-        <module name="test-fdfs" />
-        <module name="xc-service-api" />
-        <module name="demo8809" />
         <module name="xc-framework-utils" />
+        <module name="xc-service-api" />
+        <module name="xc-service-base-filesystem22100" />
+        <module name="test-fdfs" />
+        <module name="xc-govern-center50102" />
+        <module name="xc-govern-center50101" />
+        <module name="cms-client31000" />
+        <module name="xc-framework-common" />
+        <module name="demo8809" />
+        <module name="xc-service-manage-course31200" />
+        <module name="rabbitmq-client-producer" />
+        <module name="test-freemarker" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -43,6 +44,7 @@
       <module name="xc-framework-model" options="-parameters" />
       <module name="xc-framework-utils" options="-parameters" />
       <module name="xc-govern-center50101" options="-parameters" />
+      <module name="xc-govern-center50102" options="-parameters" />
       <module name="xc-service-api" options="-parameters" />
       <module name="xc-service-base-filesystem22100" options="-parameters" />
       <module name="xc-service-manage-cms31001" options="-parameters" />
