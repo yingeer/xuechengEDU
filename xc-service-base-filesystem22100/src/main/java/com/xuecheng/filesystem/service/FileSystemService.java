@@ -17,7 +17,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.Map;
 
 /**
@@ -121,6 +123,60 @@ public class FileSystemService {
                 extName = originalFileName.substring(originalFileName.lastIndexOf(".") + 1);
             }
             String fileId = sc1.upload_file1(bytes, extName, null);
+            return fileId;
+        } catch (IOException | MyException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    public UploadFileResult uploadFile(String fileName, String filetag,
+                                       String businesskey, String metadata) {
+
+        // 上传到fdfs
+        String fileId = uploadToFafsByFileName(fileName);
+        if (fileId == null)
+            System.out.println("fileId:\t" + fileId);
+        // 创建FileSystem对象
+        FileSystem fileSystem = new FileSystem();
+        fileSystem.setFileId(fileId);
+        fileSystem.setFileName(fileName);
+//        fileSystem.setFileSize(new MultipartFile(fileName).getSize());
+        String extName = fileName.substring(fileName.lastIndexOf(".") + 1);
+        fileSystem.setFileType(extName);
+        fileSystem.setBusinesskey(businesskey);
+        fileSystem.setFiletag(filetag);
+        fileSystem.setFilePath(fileId);
+        if (StringUtils.isNotEmpty(metadata)) {
+            Map map = JSON.parseObject(metadata, Map.class);
+            fileSystem.setMetadata(map);
+        }
+        fileSystemRepository.save(fileSystem);
+
+        return new UploadFileResult(CommonCode.SUCCESS, fileSystem);
+    }
+
+    private String uploadToFafsByFileName(String fileName) {
+        try {
+            initFdfsConfig();
+            //创建客户端TrackerClient
+            TrackerClient tc = new TrackerClient();
+            //连接tracker Server
+            TrackerServer ts = tc.getConnection();
+            if (ts == null) {
+                System.out.println("getConnection return null");
+                return null;
+            }
+            //获取一个storage server
+            StorageServer ss = tc.getStoreStorage(ts);
+            if (ss == null) {
+                System.out.println("getStoreStorage return null");
+            }
+            //创建一个storage存储客户端
+            StorageClient1 sc1 = new StorageClient1(ts, ss);
+            // 后缀名
+            String extName = fileName.substring(fileName.lastIndexOf(".") + 1);
+            String fileId = sc1.upload_file1(fileName, extName, null);
             return fileId;
         } catch (IOException | MyException e) {
             System.out.println(e.getMessage());
