@@ -1,6 +1,7 @@
 package com.xuecheng.api.filesystem;
 
 import com.xuecheng.framework.domain.filesystem.response.UploadFileResult;
+import com.xuecheng.framework.model.response.ResponseResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.multipart.MultipartFile;
@@ -27,4 +28,14 @@ public interface FileSystemControllerApi {
                                    String filetag,
                                    String businesskey,
                                    String metadata);
+
+    /**
+     * 下载图片保存图片信息到mysql course_pic表
+     * @param courseId
+     * @param pic
+     * @return
+     */
+    @ApiOperation("添加课程图片")
+    public ResponseResult addCoursePic(String courseId, String pic);
+
 }
