@@ -1,7 +1,7 @@
-package manage_cms.service;
+package com.xuecheng.manage_cms.service;
 
 import com.xuecheng.framework.domain.cms.CmsConfig;
-import manage_cms.dao.CmsConfigRepository;
+import com.xuecheng.manage_cms.dao.CmsConfigRepository;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

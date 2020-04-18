@@ -1,7 +1,7 @@
-package manage_cms.controller;
+package com.xuecheng.manage_cms.controller;
 
 import com.xuecheng.framework.web.BaseController;
-import manage_cms.service.PageService;
+import com.xuecheng.manage_cms.service.PageService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

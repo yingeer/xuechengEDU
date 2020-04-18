@@ -1,4 +1,4 @@
-package manage_cms.controller;
+package com.xuecheng.manage_cms.controller;
 
 import com.xuecheng.api.cms.CmsPageControllerApi;
 import com.xuecheng.framework.domain.cms.CmsPage;
@@ -6,7 +6,7 @@ import com.xuecheng.framework.domain.cms.request.QueryPageRequest;
 import com.xuecheng.framework.domain.cms.response.CmsPageResult;
 import com.xuecheng.framework.model.response.QueryResponseResult;
 import com.xuecheng.framework.model.response.ResponseResult;
-import manage_cms.service.PageService;
+import com.xuecheng.manage_cms.service.PageService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;

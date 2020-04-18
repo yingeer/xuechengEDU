@@ -1,4 +1,4 @@
-package manage_cms.service;
+package com.xuecheng.manage_cms.service;
 
 import com.alibaba.fastjson.JSON;
 import com.mongodb.client.gridfs.GridFSBucket;
@@ -17,9 +17,9 @@ import com.xuecheng.framework.model.response.ResponseResult;
 import freemarker.cache.StringTemplateLoader;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
-import manage_cms.config.RabbitMqConfig;
-import manage_cms.dao.CmsPageRepository;
-import manage_cms.dao.CmsTemplateRepository;
+import com.xuecheng.manage_cms.config.RabbitMqConfig;
+import com.xuecheng.manage_cms.dao.CmsPageRepository;
+import com.xuecheng.manage_cms.dao.CmsTemplateRepository;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.bson.types.ObjectId;
