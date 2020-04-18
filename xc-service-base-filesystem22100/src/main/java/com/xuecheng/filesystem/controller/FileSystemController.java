@@ -60,4 +60,15 @@ public class FileSystemController implements FileSystemControllerApi {
         return fileSystemService.findCoursepic(courseId);
     }
 
+    /**
+     * 删除课程图片
+     * @param courseId
+     * @return
+     */
+    @Override
+    @DeleteMapping("/coursepic/delete/{courseId}")
+    public ResponseResult deleteCoursePic(@PathVariable("courseId") String courseId) {
+        return fileSystemService.deleteCoursePic(courseId);
+    }
+
 }

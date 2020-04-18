@@ -17,6 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
@@ -225,5 +226,19 @@ public class FileSystemService {
             coursePic = optional.get();
         }
         return coursePic;
+    }
+
+    /**
+     * 删除课程图片
+     * @param courseId
+     * @return
+     */
+    @Transactional
+    public ResponseResult deleteCoursePic(String courseId) {
+        long resultCode = coursePicRepository.deleteCoursePicByCourseid(courseId);
+        if (resultCode > 0) {
+            return ResponseResult.SUCCESS();
+        }
+        return ResponseResult.FAIL();
     }
 }

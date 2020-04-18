@@ -39,6 +39,20 @@ public interface FileSystemControllerApi {
     @ApiOperation("添加课程图片")
     public ResponseResult addCoursePic(String courseId, String pic);
 
+    /**
+     * 获取课程基础信息
+     *
+     * @param courseId
+     * @return
+     */
     @ApiOperation("获取课程基础信息")
     public CoursePic findCoursePic(String courseId);
+
+    /**
+     * 删除课程图片
+     * @param courseId
+     * @return
+     */
+    @ApiOperation("删除课程图片")
+    public ResponseResult deleteCoursePic(String courseId);
 }
