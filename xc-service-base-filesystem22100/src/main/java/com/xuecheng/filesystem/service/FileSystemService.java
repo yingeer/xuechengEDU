@@ -213,4 +213,17 @@ public class FileSystemService {
         return new ResponseResult(CommonCode.SUCCESS);
     }
 
+    /**
+     * 获取课程基础信息
+     * @param courseId
+     * @return
+     */
+    public CoursePic findCoursepic(String courseId) {
+        Optional<CoursePic> optional = coursePicRepository.findById(courseId);
+        CoursePic coursePic = null;
+        if (optional.isPresent()) {
+            coursePic = optional.get();
+        }
+        return coursePic;
+    }
 }

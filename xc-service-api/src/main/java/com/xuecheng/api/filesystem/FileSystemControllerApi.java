@@ -1,5 +1,6 @@
 package com.xuecheng.api.filesystem;
 
+import com.xuecheng.framework.domain.course.CoursePic;
 import com.xuecheng.framework.domain.filesystem.response.UploadFileResult;
 import com.xuecheng.framework.model.response.ResponseResult;
 import io.swagger.annotations.Api;
@@ -38,4 +39,6 @@ public interface FileSystemControllerApi {
     @ApiOperation("添加课程图片")
     public ResponseResult addCoursePic(String courseId, String pic);
 
+    @ApiOperation("获取课程基础信息")
+    public CoursePic findCoursePic(String courseId);
 }

@@ -3,6 +3,7 @@ package com.xuecheng.filesystem.controller;
 import com.xuecheng.api.filesystem.FileSystemControllerApi;
 import com.xuecheng.filesystem.dao.FileSystemRepository;
 import com.xuecheng.filesystem.service.FileSystemService;
+import com.xuecheng.framework.domain.course.CoursePic;
 import com.xuecheng.framework.domain.filesystem.response.UploadFileResult;
 import com.xuecheng.framework.model.response.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +47,17 @@ public class FileSystemController implements FileSystemControllerApi {
     @Override
     public ResponseResult addCoursePic(@RequestParam(value = "courseid") String courseId, @RequestParam("pic") String pic) {
         return fileSystemService.saveCoursePic(courseId, pic);
+    }
+
+    /**
+     * 获取课程基础信息
+     * @param courseId
+     * @return
+     */
+    @Override
+    @GetMapping("/coursepic/list/{courseId}")
+    public CoursePic findCoursePic(@PathVariable("courseId") String courseId) {
+        return fileSystemService.findCoursepic(courseId);
     }
 
 }
