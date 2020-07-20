@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # xuechengEDU——基于springboot&springcloud的在线教育平台（后端）
 
 # 1.  写在前面
@@ -610,3 +611,9 @@ http://www.xuecheng.com/cms/page/preview/5a795ac7dd573c04508f3a56
 
 1. 虽然技术用的多，但大都感觉都是蜻蜓点水，只是停留在了会配置环境，会基本使用的阶段，没有太深入某个技术。
 2. ​
+=======
+# xuechengEDU
+学成在线项目————一个在线授课学习后端实现，基于spring boot &amp; spring cloud
+
+## 项目结构整体
+>>>>>>> 5482d4398470bf626f67defdec21d62a87eedd19
