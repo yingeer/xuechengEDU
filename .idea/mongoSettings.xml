@@ -4,7 +4,10 @@
     <option name="serverConfigurations">
       <list>
         <ServerConfiguration>
-          <option name="label" value="xc" />
+          <option name="authenticationDatabase" value="xc_cms" />
+          <option name="authenticationMechanism" value="SCRAM-SHA-1" />
+          <option name="label" value="xuecheng" />
+          <option name="password" value="newman123" />
           <option name="serverUrls">
             <list>
               <option value="localhost:27017" />
@@ -13,6 +16,8 @@
           <option name="sshTunnelingConfiguration">
             <SshTunnelingConfiguration />
           </option>
+          <option name="userDatabase" value="xc_cms" />
+          <option name="username" value="ying" />
         </ServerConfiguration>
       </list>
     </option>

@@ -4,10 +4,11 @@ spring:
   application:
     name: xc-service-base-filesystem
 #mongo配置
+#  mongodb://user:pwd@ip1:port1,ip2:port2/database
   data:
     mongodb:
       database: xc_cms
-      uri: mongodb://127.0.0.1:27017
+      uri: mongodb://ying:newman123@127.0.0.1:27017
 #SpringMVC上传文件配置
   servlet:
     multipart:

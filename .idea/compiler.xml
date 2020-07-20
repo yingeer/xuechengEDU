@@ -24,21 +24,10 @@
         <module name="test-freemarker" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="demo8809" target="1.8" />
-      <module name="rabbitmq-client-consumer" target="1.8" />
-      <module name="test-fastdfs" target="1.8" />
-      <module name="test-fastdfs (2)" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="cms-client31000" options="-parameters" />
-      <module name="demo8809" options="" />
-      <module name="rabbitmq-client-consumer" options="-parameters" />
-      <module name="rabbitmq-client-producer" options="-parameters" />
-      <module name="test-fastdfs" options="-parameters" />
-      <module name="test-fastdfs (2)" options="-parameters" />
       <module name="test-fdfs" options="-parameters" />
       <module name="test-freemarker" options="-parameters" />
       <module name="xc-framework-common" options="-parameters" />

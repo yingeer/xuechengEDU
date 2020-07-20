@@ -5,7 +5,7 @@ spring:
     name: xc-service-manage-cms
   data:
     mongodb:
-      uri:  mongodb://localhost:27017
+      uri:  mongodb://ying:newman123@127.0.0.1:27017
       database: xc_cms
   rabbitmq:
     host: 127.0.0.1

@@ -75,7 +75,8 @@ public class PageService {
         if (queryPageRequest == null) {
             queryPageRequest = new QueryPageRequest();
         }
-        //自定义条件查询
+
+        //自定义条件查询 模糊查询
         //定义条件匹配器
 
         ExampleMatcher exampleMatcher = ExampleMatcher.matching()
@@ -96,6 +97,8 @@ public class PageService {
         }
         //定义条件对象Example
         Example<CmsPage> example = Example.of(cmsPage, exampleMatcher);
+
+        // 分页功能
         //分页参数
         if(page <=0) {
             page = 1;

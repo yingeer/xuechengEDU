@@ -8,9 +8,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
- * @author Administrator
- * @version 1.0
- **/
+ * @author Ying on 2020/4/18
+ */
 @SpringBootApplication
 @EnableEurekaClient
 @EnableFeignClients

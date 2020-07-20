@@ -5,14 +5,14 @@ spring:
     name: xc-service-manage-cms
   data:
     mongodb:
-      uri:  mongodb://localhost:27017
+      uri:  mongodb://ying:newman123@127.0.0.1:27017
       database: xc_cms
-  rabbitmq:
-    host: 127.0.0.1
-    port: 5672
-    username: guest
-    password: guest
-    virtualHost: /
+#  rabbitmq:
+#    host: 127.0.0.1
+#    port: 5672
+#    username: guest
+#    password: guest
+#    virtualHost: /
   freemarker:
     cache: false  # 关闭缓存
     settings:
