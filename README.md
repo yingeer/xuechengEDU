@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # xuechengEDU——基于springboot&springcloud的在线教育平台（后端）
 
 # 1.  写在前面
@@ -21,7 +20,7 @@
 
 # 2.  项目基本结构
 
-![基本项目结构](C:\Users\Acer\Desktop\assets\基本项目结构.png)
+![基本项目结构](https://github.com/yingeer/xuechengEDU/blob/master/assets/img/cms/%E5%9F%BA%E6%9C%AC%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84.png)
 
 上面这张图就是该项目的基本结构
 
@@ -610,10 +609,6 @@ http://www.xuecheng.com/cms/page/preview/5a795ac7dd573c04508f3a56
 # 总结
 
 1. 虽然技术用的多，但大都感觉都是蜻蜓点水，只是停留在了会配置环境，会基本使用的阶段，没有太深入某个技术。
-2. ​
-=======
-# xuechengEDU
-学成在线项目————一个在线授课学习后端实现，基于spring boot &amp; spring cloud
+2. 
 
-## 项目结构整体
->>>>>>> 5482d4398470bf626f67defdec21d62a87eedd19
+
