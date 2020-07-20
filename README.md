@@ -54,7 +54,7 @@
 
 1. 把前端的门户工程拷贝到一个地方
 
-![门户工程目录](C:\Users\Acer\Desktop\assets\门户工程目录.png)
+![门户工程目录](https://github.com/yingeer/xuechengEDU/blob/master/assets/img/cms/门户工程目录.png)
 
 2. 配置nignx 
 
@@ -88,7 +88,7 @@
 
    启动nginx查看效果
 
-   ![门户效果图](C:\Users\Acer\Desktop\assets\门户效果图.png)
+   ![门户效果图](https://github.com/yingeer/xuechengEDU/blob/master/assets/img/cms/门户效果图.png)
 
    注意，这里有各种图，反复强调，正是这些页面要经常换，所以才要进行CMS管理，否则等到要临时更换时再开发就来不及了😑
 
@@ -100,7 +100,7 @@
 
    创建xc_cms数据库，把json数据文件导入，一次导入的数据文件有点多，需要慢慢理解
 
-   ![mongodb数据库展示](C:\Users\Acer\Desktop\assets\mongdb数据库展示.png)
+   ![mongodb数据库展示](https://github.com/yingeer/xuechengEDU/blob/master/assets/img/cms/mongdb数据库展示.png)
 
    建议：给数据库添加用户
 
@@ -127,7 +127,7 @@
 
    ​
 
-   ![cms模型](C:\Users\Acer\Desktop\assets\cms模型.png)
+   ![cms模型](https://github.com/yingeer/xuechengEDU/blob/master/assets/img/cms/cms模型.png)
 
 模型都是统一在model模块中定义的，直接在业务模块中添加一个model依赖就行，方便管理。
 
@@ -139,7 +139,7 @@
 
    在api模块下定义
 
-   ![api模块](C:\Users\Acer\Desktop\assets\api模块.png)
+   ![api模块](https://github.com/yingeer/xuechengEDU/blob/master/assets/img/cms/api模块.png)
 
    定义查询接口 findList
 
@@ -216,7 +216,7 @@ spring:
 
    看到项目跑起来是件幸福的事☺
 
-   ![跑起来啦](C:\Users\Acer\Desktop\assets\项目跑起来啦.png)
+   ![跑起来啦](https://github.com/yingeer/xuechengEDU/blob/master/assets/img/cms/项目跑起来啦.png)
 
    ​
 
@@ -308,7 +308,7 @@ spring:
 
    7.1 看看controller层能否正常返回数据  http://localhost:31001/cms/page/list/1/10
 
-   ![返回数据成功](C:\Users\Acer\Desktop\assets\返回数据成功.png)
+   ![返回数据成功](https://github.com/yingeer/xuechengEDU/blob/master/assets/img/cms/返回数据成功.png)
 
 前端不行，只能做到这步了，返回个json就……👀，再用用spring boot自带的test来测试一下
 
@@ -316,7 +316,7 @@ spring:
 
 注意，test的包结构要与主启动类所在包结构一致，resources里面可以不加文件，一旦加了（如application.yaml），那测试开启后就会读取 test/resources/*.yaml，建议不加，如果改了原配置，那么test/下也要改，麻烦
 
-![test包结构](C:\Users\Acer\Desktop\assets\test包结构注意.png)
+![test包结构](https://github.com/yingeer/xuechengEDU/blob/master/assets/img/cms/test包结构注意.png)
 
 再贴一下代码
 
@@ -342,7 +342,7 @@ public class CmsPageRepositoryTest {
 
 结果：
 
-![测试成功](C:\Users\Acer\Desktop\assets\首次测试成功.png)
+![测试成功](https://github.com/yingeer/xuechengEDU/blob/master/assets/img/cms/首次测试成功.png)
 
 当然，MongoRepository提供了很多现成的方法，可以测试
 
@@ -377,11 +377,11 @@ ExampleMatcher exampleMatcher = ExampleMatcher.matching()
 
 webpack打包后，http://localhost:11000
 
-![cms前端](C:\Users\Acer\Desktop\assets\cms前端.png)
+![cms前端](https://github.com/yingeer/xuechengEDU/blob/master/assets/img/cms/cms前端.png)
 
 用一下搜索功能，看看是不是模糊查询，没有问题
 
-![模糊查询](C:\Users\Acer\Desktop\assets\img\cms\cms前端模糊查询.png)
+![模糊查询](https://github.com/yingeer/xuechengEDU/blob/master/assets/img/cms/cms前端模糊查询.png)
 
 
 
@@ -464,7 +464,7 @@ webpack打包后，http://localhost:11000
 
 
 
-![页面静态化](C:\Users\Acer\Desktop\assets\img\cms\页面静态化.png)
+![页面静态化](https://github.com/yingeer/xuechengEDU/blob/master/assets/img/cms/页面静态化.png)
 
 
 
@@ -474,14 +474,14 @@ webpack打包后，http://localhost:11000
 
 流程
 
-![静态化流程](C:\Users\Acer\Desktop\assets\img\cms\页面静态化流程.png)
+![静态化流程](https://github.com/yingeer/xuechengEDU/blob/master/assets/img/cms/页面静态化流程.png)
 
 1. 一开始从cms_page中获得dataUrl
 2. 通过restTemplate工具发送dataUrl请求，cms_manage服务继续解析请求，返回一个CmsConfig对象，从model属性获得轮播图真正url
 3. 从mongoDB的GridFS中获得页面的模板
 4. 模板渲染生成html
 
-![cms_config模型](C:\Users\Acer\Desktop\assets\img\cms\cmsconfig一个模型.png)
+![cms_config模型](https://github.com/yingeer/xuechengEDU/blob/master/assets/img/cms/cmsconfig一个模型.png)
 
 
 
@@ -535,7 +535,7 @@ Controller  ……
 
 #### 模板管理
 
-![模板管理](C:\Users\Acer\Desktop\assets\img\cms\模板管理.png)
+![模板管理](https://github.com/yingeer/xuechengEDU/blob/master/assets/img/cms/模板管理.png)
 
 
 
@@ -551,7 +551,7 @@ Controller  ……
 
 页面在发布前增加页面预览的步骤，方便用户检查页面内容是否正确。页面预览的流程如下：
 
-![页面预览](C:\Users\Acer\Desktop\assets\img\cms\页面预览流程.png)
+![页面预览](https://github.com/yingeer/xuechengEDU/blob/master/assets/img/cms/页面预览流程.png)
 
 1. 用户进入cms前端，点击“页面预览”在浏览器请求cms页面预览链接。
 2. cms根据页面id查询DataUrl并远程请求DataUrl获取数据模型。
@@ -592,7 +592,7 @@ http://www.xuecheng.com/cms/page/preview/5a795ac7dd573c04508f3a56
 
 返回写好的轮播图
 
-![页面预览效果](C:\Users\Acer\Desktop\assets\img\cms\页面预览效果.png)
+![页面预览效果](https://github.com/yingeer/xuechengEDU/blob/master/assets/img/cms/页面预览效果.png)
 
 
 
