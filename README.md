@@ -604,7 +604,7 @@ http://www.xuecheng.com/cms/page/preview/5a795ac7dd573c04508f3a56
 
 # 业务功能2——课程管理服务
 
-[课程管理服务.md](C:\Users\Acer\Desktop\assets\doc\课程管理服务.md)
+[课程管理服务.md](https://github.com/yingeer/xuechengEDU/blob/master/assets/doc/%E8%AF%BE%E7%A8%8B%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1.md)
 
 # 总结
 
