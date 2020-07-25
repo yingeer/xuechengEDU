@@ -60,7 +60,7 @@
 
    这里要用到nignx的SSI技术（服务端嵌入），ssi包含类似于jsp页面中的incluce指令，ssi是在web服务端将include指定 的页面包含在网页中，渲染html网页响应给客户端 。
 
-   <!‐‐#include virtual="/../....html"‐‐>
+   `<!‐‐#include virtual="/../....html"‐‐>`
 
    **这样就可以把门户页面拆分多个可更换的部分，每个部分都可以换成存储中的页面，实现对子站点页面的管理。**
 
