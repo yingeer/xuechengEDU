@@ -604,13 +604,13 @@ http://www.xuecheng.com/cms/page/preview/5a795ac7dd573c04508f3a56
 
 
 
-1、前端请求cms执行页面发布。
-2、cms执行静态化程序生成html文件。
-3、cms将html文件存储到GridFS中。
-4、cms向MQ发送页面发布消息
-5、MQ将页面发布消息通知给Cms Client
-6、Cms Client从GridFS中下载html文件
-7、Cms Client将html保存到所在服务器指定目录
+1. 前端请求cms执行页面发布。
+2. cms执行静态化程序生成html文件。
+3. cms将html文件存储到GridFS中。
+4. cms向MQ发送页面发布消息
+5. MQ将页面发布消息通知给Cms Client
+6. Cms Client从GridFS中下载html文件
+7. Cms Client将html保存到所在服务器指定目录
 
 
 
