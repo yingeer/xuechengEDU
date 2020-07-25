@@ -600,7 +600,7 @@ http://www.xuecheng.com/cms/page/preview/5a795ac7dd573c04508f3a56
 
 #### 业务流程
 
-![页面发布业务](D:\xuecheng-edu\xcEduService\assets\img\cms\页面发布流程.png)
+![页面发布业务](https://github.com/yingeer/xuechengEDU/blob/master/assets/img/cms/%E9%A1%B5%E9%9D%A2%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B.png)
 
 
 
@@ -626,8 +626,6 @@ http://www.xuecheng.com/cms/page/preview/5a795ac7dd573c04508f3a56
 
 2. 这个项目感觉是为了用技术而用技术，一上来就用各种中间件。实际上的开发，应该是先实现基本功能后，在生产过程中遇到流量超载，才慢慢引入这些中间件。一个系统不可能一次就建成终极形态，技术的引入应该是适应业务需求的变化。
 
-3. ​
-
-   ​
+3. 
 
 
