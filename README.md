@@ -612,7 +612,8 @@ http://www.xuecheng.com/cms/page/preview/5a795ac7dd573c04508f3a56
 6. Cms Client从GridFS中下载html文件
 7. Cms Client将html保存到所在服务器指定目录
 
-
+![项目代码 MQ Consumer](https://github.com/yingeer/xuechengEDU/tree/master/cms-client31000)
+![项目代码 MQ Producer](https://github.com/yingeer/xuechengEDU/blob/master/xc-service-manage-cms31001/src/main/java/com/xuecheng/manage_cms/controller/CmsPageController.java#L63)
 
 
 
@@ -622,10 +623,10 @@ http://www.xuecheng.com/cms/page/preview/5a795ac7dd573c04508f3a56
 
 # 总结
 
-1. 虽然技术用的多，但大都感觉都是蜻蜓点水，只是停留在了会配置环境，会基本使用的阶段，没有太深入某个技术。
+1. 虽然技术用的多，但大都感觉都是蜻蜓点水，只是停留在了会配置环境，会基本使用的阶段，没有深入某个技术。
 
-2. 这个项目感觉是为了用技术而用技术，一上来就用各种中间件。实际上的开发，应该是先实现基本功能后，在生产过程中遇到流量超载，才慢慢引入这些中间件。一个系统不可能一次就建成终极形态，技术的引入应该是适应业务需求的变化。
+2. 项目感觉是为了用技术而用技术，一上来就用各种中间件。实际上的开发，应该是先实现基本功能后，在生产过程中遇到流量超载，才慢慢引入这些中间件。一个系统不可能一次就建成终极形态，技术的引入应该是适应业务需求的变化。
 
 3. 
 
-
+4. 
