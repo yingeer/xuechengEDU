@@ -586,7 +586,7 @@ upstream cms_server_pool{
 
 
 
-效果
+效果示例
 
 http://www.xuecheng.com/cms/page/preview/5a795ac7dd573c04508f3a56
 
@@ -600,19 +600,20 @@ http://www.xuecheng.com/cms/page/preview/5a795ac7dd573c04508f3a56
 
 #### 业务流程
 
-![页面发布业务](D:\xuecheng-edu\xcEduService\assets\img\cms\页面发布流程.png)
+![页面发布业务](https://github.com/yingeer/xuechengEDU/blob/master/assets/img/cms/%E9%A1%B5%E9%9D%A2%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B.png)
 
 
 
-1、前端请求cms执行页面发布。
-2、cms执行静态化程序生成html文件。
-3、cms将html文件存储到GridFS中。
-4、cms向MQ发送页面发布消息
-5、MQ将页面发布消息通知给Cms Client
-6、Cms Client从GridFS中下载html文件
-7、Cms Client将html保存到所在服务器指定目录
+1. 前端请求cms执行页面发布。
+2. cms执行静态化程序生成html文件。
+3. cms将html文件存储到GridFS中。
+4. cms向MQ发送页面发布消息
+5. MQ将页面发布消息通知给Cms Client
+6. Cms Client从GridFS中下载html文件
+7. Cms Client将html保存到所在服务器指定目录
 
-
+[项目代码 MQ Consumer](https://github.com/yingeer/xuechengEDU/tree/master/cms-client31000)
+[项目代码 MQ Producer](https://github.com/yingeer/xuechengEDU/blob/master/xc-service-manage-cms31001/src/main/java/com/xuecheng/manage_cms/controller/CmsPageController.java#L63)
 
 
 
@@ -622,12 +623,9 @@ http://www.xuecheng.com/cms/page/preview/5a795ac7dd573c04508f3a56
 
 # 总结
 
+
 1. 虽然技术用的多，但大都感觉都是蜻蜓点水，只是停留在了会配置环境，会基本使用的阶段，没有太深入某个技术。
 
 2. 这个项目感觉是为了用技术而用技术，一上来就用各种中间件。实际上的开发，应该是先实现基本功能后，在生产过程中遇到流量超载，才慢慢引入这些中间件。一个系统不可能一次就建成最终的形态，技术一步步地引入应该是适应业务需求的变化。
 
-3. ​
-
-   ​
-
-
+  ​
