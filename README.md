@@ -586,7 +586,7 @@ upstream cms_server_pool{
 
 
 
-效果
+效果示例
 
 http://www.xuecheng.com/cms/page/preview/5a795ac7dd573c04508f3a56
 
@@ -612,8 +612,8 @@ http://www.xuecheng.com/cms/page/preview/5a795ac7dd573c04508f3a56
 6. Cms Client从GridFS中下载html文件
 7. Cms Client将html保存到所在服务器指定目录
 
-![项目代码 MQ Consumer](https://github.com/yingeer/xuechengEDU/tree/master/cms-client31000)
-![项目代码 MQ Producer](https://github.com/yingeer/xuechengEDU/blob/master/xc-service-manage-cms31001/src/main/java/com/xuecheng/manage_cms/controller/CmsPageController.java#L63)
+[项目代码 MQ Consumer](https://github.com/yingeer/xuechengEDU/tree/master/cms-client31000)
+[项目代码 MQ Producer](https://github.com/yingeer/xuechengEDU/blob/master/xc-service-manage-cms31001/src/main/java/com/xuecheng/manage_cms/controller/CmsPageController.java#L63)
 
 
 
