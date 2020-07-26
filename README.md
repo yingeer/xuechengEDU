@@ -12,7 +12,7 @@
 
    基于springcloud和springboot，spring cloud 用的是netflix F版（没有用alibaba那套），springboot用的是2.0.1.RELEASE，其他技术版本不做过多介绍。
 
-3. 该项目使用前后端分离，本人只做了后端，前端原本使用的是vue技术栈。所以跑起来只能在浏览器上返回一些json数据😵
+3. 该项目使用前后端分离，本人只做了后端，前端原本使用的是vue技术栈（不太会）。跑起来只能在浏览器上返回一些json数据😵
 
 4. 项目搭建过程中用到了1台Windows+2台Ubuntu，也只能在本地跑起来😓上线不现实，**如果你发现了本人的这个项目并且想模仿学习**，**欢迎一起交流学习**。
 
@@ -101,6 +101,8 @@
    创建xc_cms数据库，把json数据文件导入，一次导入的数据文件有点多，需要慢慢理解
 
    ![mongodb数据库展示](https://github.com/yingeer/xuechengEDU/blob/master/assets/img/cms/mongdb数据库展示.png)
+
+   ​
 
    建议：给数据库添加用户
 
@@ -598,6 +600,10 @@ http://www.xuecheng.com/cms/page/preview/5a795ac7dd573c04508f3a56
 
 ### 3.2.7 页面发布
 
+#### 技术点
+
+引入消息中间件RabbitMQ        [SpringBoot集成RabbitMQ参考](https://www.cnblogs.com/ityouknow/p/6120544.html)
+
 #### 业务流程
 
 ![页面发布业务](https://github.com/yingeer/xuechengEDU/blob/master/assets/img/cms/%E9%A1%B5%E9%9D%A2%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B.png)
@@ -621,11 +627,9 @@ http://www.xuecheng.com/cms/page/preview/5a795ac7dd573c04508f3a56
 
 [课程管理服务.md](https://github.com/yingeer/xuechengEDU/blob/master/assets/doc/%E8%AF%BE%E7%A8%8B%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1.md)
 
-# 总结
+# 总结体会
 
 
 1. 虽然技术用的多，但大都感觉都是蜻蜓点水，只是停留在了会配置环境，会基本使用的阶段，没有太深入某个技术。
-
-2. 这个项目感觉是为了用技术而用技术，一上来就用各种中间件。实际上的开发，应该是先实现基本功能后，在生产过程中遇到流量超载，才慢慢引入这些中间件。一个系统不可能一次就建成最终的形态，技术一步步地引入应该是适应业务需求的变化。
-
-  ​
+2. 这个项目感觉是为了用技术而用技术，一上来就用各种中间件。实际上的开发，应该是先实现基本功能后，在生产过程中遇到性能瓶颈，才慢慢引入这些中间件。一个系统不可能一次就建成最终的形态，技术一步步地引入应该是适应业务需求的变化。
+3. mysql数据库​表设计的时候，主键Id用的类型是UUID，这点应该是非常忌讳的，增删操作都会对页增加额外的操作，影响性能。

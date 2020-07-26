@@ -31,6 +31,7 @@ public class CategoryController implements CategoryControllerApi {
      * 分页查询category
      * @return
      */
+    @Override
     @GetMapping("/list/{page}/{size}")
     public QueryResult<Category> getCategoryByPage(@PathVariable(value = "page") int page,
                                                    @PathVariable("size") int size) {

@@ -10,7 +10,7 @@ public interface CategoryMapper {
 
     /**
      * 查询所有的category
-     * @return 返回categoryNode类型
+     * @return categoryNode
      */
     public CategoryNode getCategoryNode();
 
