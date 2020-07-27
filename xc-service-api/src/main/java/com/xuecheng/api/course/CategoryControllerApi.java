@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 public interface CategoryControllerApi {
 
-    @ApiOperation("查询分类")
+    @ApiOperation("查询category分类信息")
     public CategoryNode findList();
 
     @ApiOperation("分页查询category")
