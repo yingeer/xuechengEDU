@@ -631,7 +631,7 @@ http://www.xuecheng.com/cms/page/preview/5a795ac7dd573c04508f3a56
 
 # 4. 业务功能2——课程管理服务
 
-[课程管理.md](https://github.com/yingeer/xuechengEDU/blob/master/assets/doc/%E8%AF%BE%E7%A8%8B%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1.md)
+[课程管理.md](https://github.com/yingeer/xuechengEDU/blob/master/assets/doc/%E8%AF%BE%E7%A8%8B%E7%AE%A1%E7%90%86.md)
 
 
 
@@ -644,4 +644,4 @@ http://www.xuecheng.com/cms/page/preview/5a795ac7dd573c04508f3a56
 2. 这个项目感觉是为了用技术而用技术，一上来就用各种中间件。实际上的开发，应该是先实现基本功能后，在生产过程中遇到性能瓶颈，才慢慢引入这些中间件。一个系统不可能一次就建成最终的形态，技术一步步地引入应该是适应业务需求的变化。
 3. mysql数据库表设计的时候，主键Id用的类型是UUID，这点应该是非常忌讳的，增删操作都会对页增加额外的操作，影响性能。
 4. 在课程管理服务这个业务功能中同时用到了spring data jpa和mybatis两个持久层工具，之前想想，同时引入两个真的有必要吗？后来觉得简单的查询用spring data jpa很方便，只需写接口，少量复杂的查询用mybatis，而且spring data jpa是spring原生支持的，不会额外引入大量的包。
-4. 做的过程是蛮艰辛的，在工程经验不足的情况下不应该选这么大的来做😞
+5. 做的过程是蛮艰辛的，在工程经验不足的情况下不应该选这么大的来做😞
