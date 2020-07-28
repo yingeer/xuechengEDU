@@ -678,4 +678,5 @@ http://www.xuecheng.com/cms/page/preview/5a795ac7dd573c04508f3a56
 3. mysql数据库表设计的时候，主键Id用的类型是UUID，这点应该是非常忌讳的，增删操作都会对页增加额外的操作，影响性能。
 4. 在课程管理服务这个业务功能中同时用到了spring data jpa和mybatis两个持久层工具，之前想想，同时引入两个真的有必要吗？后来觉得简单的查询用spring data jpa很方便，只需写接口，少量复杂的查询用mybatis，而且spring data jpa是spring原生支持的，不会额外引入大量的包。
 5. spring cloud包含很多组件，目前为止就用了Eureka服务注册，服务发现功能。确实，是为了用技术而用技术，并发量没达到一定程度确实没必要用spring cloud。
+6. 接口定义的返回类型应该统一ResponseResult，开发过程中并没有，有时候还是会直接返回未封装成ResponseResult的数据类型。
 5. 做的过程是蛮艰辛的，在工程经验不足的情况下不应该选这么大的来做😞
