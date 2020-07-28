@@ -3,8 +3,7 @@ server:
 spring:
   application:
     name: xc-service-base-filesystem
-#mongo配置
-#  mongodb://user:pwd@ip1:port1,ip2:port2/database
+#mongodb配置
   data:
     mongodb:
       database: xc_cms

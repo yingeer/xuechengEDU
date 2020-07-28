@@ -22,5 +22,4 @@ public class CoursePic implements Serializable {
     @GeneratedValue(generator = "jpa-assigned")
     private String courseid;
     private String pic;
-
 }

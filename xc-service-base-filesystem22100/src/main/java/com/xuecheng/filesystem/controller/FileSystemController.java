@@ -37,38 +37,4 @@ public class FileSystemController implements FileSystemControllerApi {
         return fileSystemService.uploadFile(multipartFile, filetag, businesskey, metadata);
     }
 
-    /**
-     * 下载图片保存图片信息到mysql course_pic表
-     * @param courseId
-     * @param pic
-     * @return
-     */
-    @PostMapping("/courseid/add")
-    @Override
-    public ResponseResult addCoursePic(@RequestParam(value = "courseid") String courseId, @RequestParam("pic") String pic) {
-        return fileSystemService.saveCoursePic(courseId, pic);
-    }
-
-    /**
-     * 获取课程基础信息
-     * @param courseId
-     * @return
-     */
-    @Override
-    @GetMapping("/coursepic/list/{courseId}")
-    public CoursePic findCoursePic(@PathVariable("courseId") String courseId) {
-        return fileSystemService.findCoursepic(courseId);
-    }
-
-    /**
-     * 删除课程图片
-     * @param courseId
-     * @return
-     */
-    @Override
-    @DeleteMapping("/coursepic/delete/{courseId}")
-    public ResponseResult deleteCoursePic(@PathVariable("courseId") String courseId) {
-        return fileSystemService.deleteCoursePic(courseId);
-    }
-
 }

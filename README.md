@@ -46,7 +46,9 @@
 
 3. 该项目使用前后端分离，本人只做了后端，前端原本使用的是vue技术栈（不太会）。跑起来只能在浏览器上返回一些json数据😵
 
-4. 项目搭建过程中用到了1台Windows+2台Ubuntu，也只能在本地跑起来😓上线不现实，**如果你发现了本人的这个项目并且想模仿学习**，**欢迎一起交流学习**。
+4. 项目搭建过程中用到了Windows×1+Ubuntu×2，但只能在本地跑起来😓上线不现实。
+
+5. **如果你发现了本人的这个项目并且想一起折腾**，**欢迎一起交流学习**。😃
 
 
 
@@ -136,7 +138,7 @@
 
    ​
 
-   建议：给数据库添加用户
+   *建议：*给数据库添加用户
 
    ---
 
@@ -291,7 +293,7 @@ spring:
 
    这里用到了分页 ，大致流程如下：
 
-   把传进来的参数构造一个CmsPage对象，定义条件匹配器ExampleMatcher（这里对pageAliase属性用了模糊查询），定义条件对象Example， 定义Pageable，调用dao层findAll方法，得到Page<CmsPage>对象
+   把传进来的参数构造一个CmsPage对象，定义条件匹配器ExampleMatcher（这里对pageAliase属性用了模糊查询），定义条件对象Example， 定义Pageable，调用dao层findAll方法，得到`Page<CmsPage>`对象
 
    ​
 
@@ -419,7 +421,7 @@ webpack打包后，http://localhost:11000
 
 
 
-以上实现了一个完整的查询功能开发
+<u>以上实现了一个完整的查询功能开发</u>
 
 ------
 
@@ -504,7 +506,7 @@ webpack打包后，http://localhost:11000
 
 #### 页面静态化流程
 
-代码 `com.xuecheng.manage_cms.service.PageService.getPageHtml`
+[【代码实现】](https://github.com/yingeer/xuechengEDU/blob/master/xc-service-manage-cms31001/src/main/java/com/xuecheng/manage_cms/service/PageService.java#L218) 
 
 流程
 
@@ -567,6 +569,8 @@ Service  `public CmsConfig getConfigById(String id)`
 
 Controller  ……
 
+[【代码实现】](https://github.com/yingeer/xuechengEDU/blob/master/xc-service-manage-cms31001/src/main/java/com/xuecheng/manage_cms/controller/CmsConfigController.java)
+
 #### 模板管理
 
 ![模板管理](https://github.com/yingeer/xuechengEDU/blob/master/assets/img/cms/模板管理.png)
@@ -594,7 +598,7 @@ Controller  ……
 5. cms将静态化内容响应给浏览器。
 6. 在浏览器展示页面内容，实现页面预览的功能。
 
-参考代码  com\xuecheng\manage_cms\controller\CmsPreviewController.java
+[【代码实现】](https://github.com/yingeer/xuechengEDU/blob/master/xc-service-manage-cms31001/src/main/java/com/xuecheng/manage_cms/controller/CmsPreviewController.java)  
 
 #### 测试
 
@@ -650,8 +654,9 @@ http://www.xuecheng.com/cms/page/preview/5a795ac7dd573c04508f3a56
 6. Cms Client从GridFS中下载html文件
 7. Cms Client将html保存到所在服务器指定目录
 
-[项目代码 MQ Consumer](https://github.com/yingeer/xuechengEDU/tree/master/cms-client31000)
-[项目代码 MQ Producer](https://github.com/yingeer/xuechengEDU/blob/master/xc-service-manage-cms31001/src/main/java/com/xuecheng/manage_cms/controller/CmsPageController.java#L63)
+[代码实现 MQ Consumer](https://github.com/yingeer/xuechengEDU/tree/master/cms-client31000)
+
+[代码实现 MQ Producer](https://github.com/yingeer/xuechengEDU/blob/master/xc-service-manage-cms31001/src/main/java/com/xuecheng/manage_cms/controller/CmsPageController.java#L63)
 
 
 

@@ -1,15 +1,12 @@
 package com.xuecheng.filesystem.service;
 
 import com.alibaba.fastjson.JSON;
-import com.xuecheng.filesystem.dao.CoursePicRepository;
 import com.xuecheng.filesystem.dao.FileSystemRepository;
-import com.xuecheng.framework.domain.course.CoursePic;
 import com.xuecheng.framework.domain.filesystem.FileSystem;
 import com.xuecheng.framework.domain.filesystem.response.FileSystemCode;
 import com.xuecheng.framework.domain.filesystem.response.UploadFileResult;
 import com.xuecheng.framework.exception.ExceptionCast;
 import com.xuecheng.framework.model.response.CommonCode;
-import com.xuecheng.framework.model.response.ResponseResult;
 import org.apache.commons.lang3.StringUtils;
 import org.csource.common.MyException;
 import org.csource.fastdfs.*;
@@ -17,16 +14,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
-import javax.annotation.Resources;
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
 import java.util.Map;
-import java.util.Optional;
 
 /**
  * @author Administrator
@@ -48,9 +40,6 @@ public class FileSystemService {
 
     @Resource
     private FileSystemRepository fileSystemRepository;
-
-    @Resource
-    private CoursePicRepository coursePicRepository;
 
     /**
      * 加载fdfs配置信息
@@ -193,52 +182,5 @@ public class FileSystemService {
         }
     }
 
-    /**
-     * 下载图片保存图片信息到mysql course_pic表
-     * @param courseId
-     * @param pic
-     * @return
-     */
-    public ResponseResult saveCoursePic(String courseId, String pic) {
-        Optional<CoursePic> optionalCoursePic = coursePicRepository.findById(courseId);
-        CoursePic coursePic = null;
-        if (optionalCoursePic.isPresent()) {
-            coursePic= optionalCoursePic.get();
-        }
-        if (coursePic == null) {
-            coursePic = new CoursePic();
-        }
-        coursePic.setCourseid(courseId);
-        coursePic.setPic(pic);
-        coursePicRepository.save(coursePic);
-        return new ResponseResult(CommonCode.SUCCESS);
-    }
 
-    /**
-     * 获取课程基础信息
-     * @param courseId
-     * @return
-     */
-    public CoursePic findCoursepic(String courseId) {
-        Optional<CoursePic> optional = coursePicRepository.findById(courseId);
-        CoursePic coursePic = null;
-        if (optional.isPresent()) {
-            coursePic = optional.get();
-        }
-        return coursePic;
-    }
-
-    /**
-     * 删除课程图片
-     * @param courseId
-     * @return
-     */
-    @Transactional
-    public ResponseResult deleteCoursePic(String courseId) {
-        long resultCode = coursePicRepository.deleteCoursePicByCourseid(courseId);
-        if (resultCode > 0) {
-            return ResponseResult.SUCCESS();
-        }
-        return ResponseResult.FAIL();
-    }
 }

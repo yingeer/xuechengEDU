@@ -30,29 +30,4 @@ public interface FileSystemControllerApi {
                                    String businesskey,
                                    String metadata);
 
-    /**
-     * 下载图片保存图片信息到mysql course_pic表
-     * @param courseId
-     * @param pic
-     * @return
-     */
-    @ApiOperation("添加课程图片")
-    public ResponseResult addCoursePic(String courseId, String pic);
-
-    /**
-     * 获取课程基础信息
-     *
-     * @param courseId
-     * @return
-     */
-    @ApiOperation("获取课程基础信息")
-    public CoursePic findCoursePic(String courseId);
-
-    /**
-     * 删除课程图片
-     * @param courseId
-     * @return
-     */
-    @ApiOperation("删除课程图片")
-    public ResponseResult deleteCoursePic(String courseId);
 }
