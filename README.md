@@ -44,7 +44,7 @@
 
    基于springcloud和springboot，spring cloud 用的是netflix F版（没有用alibaba那套），springboot用的是2.0.1.RELEASE，其他技术版本不做过多介绍。
 
-3. 该项目使用前后端分离，本人只做了后端，前端原本使用的是vue技术栈（不太会）。跑起来只能在浏览器上返回一些json数据😵
+3. 该项目使用前后端分离，本人只做了后端，前端原本使用的是vue技术栈（不太会）。跑起来大概只能在浏览器上返回一些json数据😵
 
 4. 项目搭建过程中用到了Windows×1+Ubuntu×2，但只能在本地跑起来😓上线不现实。
 
