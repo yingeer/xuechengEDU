@@ -17,6 +17,7 @@ public class CourseMarketController implements CourseMarketControllerApi {
 
     /**
      * 根据id查询courseMarket对象
+     *
      * @param courseMarketId
      * @return
      */

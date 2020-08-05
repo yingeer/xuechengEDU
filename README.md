@@ -293,6 +293,8 @@ spring:
 
    这里用到了分页 ，大致流程如下：
 
+6. service
+
    把传进来的参数构造一个CmsPage对象，定义条件匹配器ExampleMatcher（这里对pageAliase属性用了模糊查询），定义条件对象Example， 定义Pageable，调用dao层findAll方法，得到`Page<CmsPage>`对象
 
    ​
@@ -348,7 +350,7 @@ spring:
 
 前端不行，只能做到这步了，返回个json就……👀，再用用spring boot自带的test来测试一下
 
-  		7.2 编写测试类
+  	7.2 编写测试类
 
 注意，test的包结构要与主启动类所在包结构一致，resources里面可以不加文件，一旦加了（如application.yaml），那测试开启后就会读取 test/resources/*.yaml，建议不加，如果改了原配置，那么test/下也要改，麻烦
 
